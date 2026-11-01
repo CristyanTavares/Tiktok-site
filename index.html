@@ -1,0 +1,1603 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cartilha TikTok Shop – Do Zero à Primeira Venda</title>
+  <meta name="description" content="O guia definitivo para vender no TikTok Shop. 80 páginas + 5 bônus exclusivos. Aprenda a abrir sua loja, escolher produtos, criar vídeos e fazer suas primeiras vendas." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ───────────── RESET & BASE ───────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --tt-black:   #010101;
+      --tt-red:     #FE2C55;
+      --tt-cyan:    #25F4EE;
+      --tt-white:   #FFFFFF;
+      --tt-gray:    #F7F7F7;
+      --tt-gray2:   #EFEFEF;
+      --tt-dark:    #111111;
+      --tt-text:    #1A1A1A;
+      --tt-muted:   #555555;
+      --gradient-hero: linear-gradient(135deg, #010101 0%, #1a0a0f 50%, #010101 100%);
+      --gradient-cta:  linear-gradient(135deg, #FE2C55 0%, #d9204a 100%);
+      --gradient-accent: linear-gradient(135deg, #25F4EE 0%, #05d4cd 100%);
+      --shadow-card: 0 8px 32px rgba(0,0,0,0.12);
+      --shadow-btn:  0 6px 24px rgba(254,44,85,0.40);
+      --radius:      16px;
+      --radius-sm:   10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--tt-white);
+      color: var(--tt-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a   { text-decoration: none; color: inherit; }
+
+    /* ───────────── UTILITY ───────────── */
+    .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .section    { padding: 80px 0; }
+    .section-dark { background: var(--tt-dark); color: var(--tt-white); }
+    .section-gray { background: var(--tt-gray); }
+    .text-center { text-align: center; }
+
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--tt-red); color: #fff;
+      font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 50px;
+    }
+    .badge-cyan { background: var(--tt-cyan); color: var(--tt-black); }
+    .badge-dark { background: var(--tt-black); color: var(--tt-white); }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 50px;
+      background: rgba(254,44,85,0.12); color: var(--tt-red);
+    }
+    .tag-cyan { background: rgba(37,244,238,0.15); color: #05a09e; }
+
+    /* ───────────── BUTTONS ───────────── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 18px 36px; border-radius: 50px;
+      font-size: 17px; font-weight: 800; letter-spacing: 0.3px;
+      cursor: pointer; border: none; transition: transform .2s, box-shadow .2s, opacity .2s;
+      text-align: center;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: var(--gradient-cta); color: #fff;
+      box-shadow: var(--shadow-btn);
+    }
+    .btn-primary:hover { box-shadow: 0 10px 32px rgba(254,44,85,0.55); }
+    .btn-secondary {
+      background: var(--tt-white); color: var(--tt-red);
+      border: 2.5px solid var(--tt-red);
+    }
+    .btn-lg { font-size: 19px; padding: 22px 48px; }
+    .btn-full { width: 100%; display: flex; }
+
+    /* ───────────── SECTION TITLES ───────────── */
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 900; line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .section-title span { color: var(--tt-red); }
+    .section-sub {
+      font-size: 18px; color: var(--tt-muted); margin-bottom: 48px; max-width: 640px;
+    }
+    .section-title-center + .section-sub { margin-left: auto; margin-right: auto; }
+
+    /* ───────────── HERO ───────────── */
+    #hero {
+      background: var(--gradient-hero);
+      color: var(--tt-white);
+      padding: 70px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FE2C55' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    /* TikTok decorative glows */
+    #hero::after {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(254,44,85,0.18) 0%, transparent 70%);
+      top: -200px; right: -200px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative; z-index: 2;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 20px;
+    }
+    .hero-eyebrow-line {
+      width: 36px; height: 3px; background: var(--tt-cyan); border-radius: 2px;
+    }
+    .hero-eyebrow-text {
+      font-size: 13px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--tt-cyan);
+    }
+
+    .hero-pretitle {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.60);
+      margin-bottom: 10px;
+    }
+    .hero-pretitle-pages {
+      display: inline-block;
+      background: var(--tt-red);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      padding: 2px 10px;
+      border-radius: 6px;
+      vertical-align: middle;
+      margin-left: 2px;
+      box-shadow: 0 2px 12px rgba(254,44,85,0.50);
+      animation: pulseBadge 2s ease-in-out infinite;
+    }
+    @keyframes pulseBadge {
+      0%, 100% { transform: scale(1); }
+      50%       { transform: scale(1.07); }
+    }
+
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(36px, 5.5vw, 62px);
+      font-weight: 900; line-height: 1.08;
+      margin-bottom: 24px;
+    }
+    .hero-title .accent { color: var(--tt-red); display: block; }
+    .hero-title .accent-cyan { color: var(--tt-cyan); }
+
+    .hero-sub {
+      font-size: 18px; color: rgba(255,255,255,0.80);
+      line-height: 1.65; margin-bottom: 36px;
+    }
+
+    .hero-features {
+      display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px;
+    }
+    .hero-feature {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 15px; font-weight: 500;
+    }
+    .hero-feature-icon {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: var(--tt-red); display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 12px;
+    }
+
+    .hero-cta-group {
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .hero-cta-note {
+      font-size: 13px; color: rgba(255,255,255,0.55);
+      text-align: center;
+    }
+
+    .hero-visual {
+      position: relative; display: flex; align-items: center; justify-content: center;
+    }
+    .hero-mockup {
+      position: relative; z-index: 2;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 24px;
+      padding: 24px;
+      backdrop-filter: blur(12px);
+    }
+    .hero-mockup-img {
+      border-radius: 16px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+      max-height: 480px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .hero-float-badge {
+      position: absolute;
+      background: var(--tt-red); color: #fff;
+      font-size: 13px; font-weight: 800;
+      padding: 10px 18px; border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(254,44,85,0.4);
+      white-space: nowrap;
+      z-index: 3;
+    }
+    .hero-float-badge.top-left { top: 10px; left: -20px; }
+    .hero-float-badge.bottom-right { bottom: 30px; right: -20px; background: var(--tt-cyan); color: var(--tt-black); box-shadow: 0 8px 24px rgba(37,244,238,0.4); }
+
+    /* ───────────── SOCIAL PROOF STRIP ───────────── */
+    #social-strip {
+      background: var(--tt-red);
+      padding: 18px 0;
+      overflow: hidden;
+    }
+    .strip-content {
+      display: flex; align-items: center; justify-content: center;
+      gap: 40px; flex-wrap: wrap;
+    }
+    .strip-item {
+      display: flex; align-items: center; gap: 8px;
+      color: #fff; font-size: 14px; font-weight: 700; letter-spacing: 0.3px;
+    }
+    .strip-item svg { opacity: 0.9; }
+    .strip-divider { width: 1px; height: 20px; background: rgba(255,255,255,0.35); }
+
+    /* ───────────── DORES ───────────── */
+    #dores { background: var(--tt-black); padding: 80px 0; }
+    .dores-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(24px, 3.5vw, 38px);
+      font-weight: 900; color: var(--tt-white); text-align: center;
+      margin-bottom: 48px; line-height: 1.2;
+    }
+    .dores-title span { color: var(--tt-red); }
+    .dores-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;
+    }
+    .dore-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: border-color .2s;
+    }
+    .dore-card:hover { border-color: rgba(254,44,85,0.4); }
+    .dore-emoji { font-size: 32px; margin-bottom: 14px; }
+    .dore-text { font-size: 15px; color: rgba(255,255,255,0.80); line-height: 1.6; }
+    .dore-text strong { color: var(--tt-white); }
+
+    /* ───────────── PRODUCT ───────────── */
+    #produto { padding: 90px 0; background: var(--tt-white); }
+    .produto-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+    }
+    .produto-tag { margin-bottom: 16px; }
+    .produto-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 900; line-height: 1.15; margin-bottom: 20px;
+    }
+    .produto-title span { color: var(--tt-red); }
+    .produto-desc { font-size: 16px; color: var(--tt-muted); line-height: 1.7; margin-bottom: 32px; }
+
+    .modulos-list { display: flex; flex-direction: column; gap: 14px; }
+    .modulo-item {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 18px; border-radius: var(--radius-sm);
+      border: 1px solid var(--tt-gray2);
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .modulo-item:hover { border-color: var(--tt-red); box-shadow: 0 4px 16px rgba(254,44,85,0.10); }
+    .modulo-num {
+      min-width: 38px; height: 38px; border-radius: 10px;
+      background: var(--tt-red); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 800; letter-spacing: 0.5px;
+    }
+    .modulo-info { flex: 1; }
+    .modulo-title-text { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+    .modulo-pages { font-size: 12px; color: var(--tt-muted); }
+
+    .produto-visual { position: sticky; top: 24px; }
+    .produto-card-img {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+
+    /* ───────────── BONUSES ───────────── */
+    #bonus {
+      padding: 90px 0;
+      background: var(--tt-black);
+    }
+    .bonus-header { text-align: center; margin-bottom: 56px; }
+    .bonus-header .section-title { color: var(--tt-white); }
+    .bonus-header .section-title span { color: var(--tt-cyan); }
+    .bonus-header .section-sub { color: rgba(255,255,255,0.60); margin: 0 auto; }
+
+    .bonus-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;
+      margin-bottom: 40px;
+    }
+    .bonus-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      position: relative;
+      transition: transform .2s, border-color .2s;
+    }
+    .bonus-card:hover { transform: translateY(-4px); border-color: rgba(37,244,238,0.30); }
+    .bonus-num {
+      position: absolute; top: -14px; left: 28px;
+      background: var(--tt-cyan); color: var(--tt-black);
+      font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+      padding: 4px 14px; border-radius: 50px;
+    }
+    .bonus-icon { font-size: 40px; margin-bottom: 16px; }
+    .bonus-title { font-size: 20px; font-weight: 800; color: var(--tt-white); margin-bottom: 10px; }
+    .bonus-desc { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.65; }
+    .bonus-pages { margin-top: 14px; font-size: 12px; font-weight: 700; color: var(--tt-cyan); }
+
+    .bonus-total-box {
+      background: linear-gradient(135deg, rgba(254,44,85,0.15) 0%, rgba(37,244,238,0.08) 100%);
+      border: 1px solid rgba(254,44,85,0.30);
+      border-radius: var(--radius);
+      padding: 32px; text-align: center;
+    }
+    .bonus-total-label { font-size: 14px; color: rgba(255,255,255,0.60); margin-bottom: 8px; }
+    .bonus-total-value { font-family: 'Montserrat', sans-serif; font-size: 42px; font-weight: 900; color: var(--tt-red); }
+    .bonus-total-desc { font-size: 15px; color: rgba(255,255,255,0.70); margin-top: 8px; }
+
+    /* ───────────── PARA QUEM É ───────────── */
+    #para-quem { padding: 90px 0; background: var(--tt-gray); }
+    .para-quem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .para-quem-col-title {
+      font-size: 18px; font-weight: 800; margin-bottom: 20px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .para-quem-col-title.yes { color: var(--tt-red); }
+    .para-quem-col-title.no  { color: var(--tt-muted); }
+    .para-quem-list { display: flex; flex-direction: column; gap: 12px; }
+    .para-quem-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: 15px; line-height: 1.6;
+    }
+    .check-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+    /* ───────────── SUMÁRIO ───────────── */
+    #sumario { padding: 90px 0; background: var(--tt-white); }
+    .sumario-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .sumario-card {
+      border-radius: var(--radius-sm);
+      padding: 24px 20px;
+      border: 1.5px solid var(--tt-gray2);
+      transition: border-color .2s, transform .2s;
+    }
+    .sumario-card:hover { border-color: var(--tt-red); transform: translateY(-3px); }
+    .sumario-pages {
+      font-size: 11px; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; color: var(--tt-red); margin-bottom: 8px;
+    }
+    .sumario-card-title { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+    .sumario-card-desc { font-size: 13px; color: var(--tt-muted); line-height: 1.55; }
+
+    /* ───────────── PREVIEW CAROUSEL ───────────── */
+    #preview { padding: 90px 0; background: var(--tt-black); }
+    .preview-header { text-align: center; margin-bottom: 48px; }
+    .preview-header .section-title { color: var(--tt-white); }
+    .preview-header .section-title span { color: var(--tt-red); }
+    .preview-header .section-sub { color: rgba(255,255,255,0.60); margin: 0 auto; }
+
+    .carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      user-select: none;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+
+    .carousel-slide {
+      flex: 0 0 calc(33.333% - 12px);
+      margin-right: 18px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.10);
+      transition: transform .25s, border-color .25s;
+      cursor: pointer;
+    }
+    .carousel-slide:hover { transform: scale(1.03); border-color: rgba(254,44,85,0.45); }
+    .carousel-slide img { width: 100%; object-fit: cover; display: block; }
+
+    /* Arrows */
+    .carousel-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      z-index: 10;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--tt-red);
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(254,44,85,0.50);
+      transition: background .2s, transform .2s;
+    }
+    .carousel-btn:hover { background: #d9204a; transform: translateY(-50%) scale(1.10); }
+    .carousel-btn svg { width: 20px; height: 20px; fill: #fff; }
+    .carousel-btn.prev { left: -20px; }
+    .carousel-btn.next { right: -20px; }
+    .carousel-btn:disabled { opacity: 0.3; cursor: default; }
+
+    /* Dots */
+    .carousel-dots {
+      display: flex; justify-content: center; align-items: center;
+      gap: 8px; margin-top: 28px;
+    }
+    .carousel-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      border: none; cursor: pointer; padding: 0;
+      transition: background .25s, transform .25s;
+    }
+    .carousel-dot.active {
+      background: var(--tt-red);
+      transform: scale(1.35);
+    }
+
+    /* Lightbox */
+    .lightbox-overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,0.93);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity .3s;
+    }
+    .lightbox-overlay.open { opacity: 1; pointer-events: all; }
+    .lightbox-img {
+      max-width: 90vw; max-height: 90vh;
+      border-radius: var(--radius);
+      box-shadow: 0 32px 80px rgba(0,0,0,0.8);
+      transition: transform .3s;
+    }
+    .lightbox-close {
+      position: absolute; top: 24px; right: 28px;
+      background: none; border: none; cursor: pointer;
+      color: #fff; font-size: 36px; line-height: 1;
+      opacity: 0.7; transition: opacity .2s;
+    }
+    .lightbox-close:hover { opacity: 1; }
+    .lightbox-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: var(--tt-red); border: none; cursor: pointer;
+      width: 52px; height: 52px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(254,44,85,0.5);
+      transition: background .2s;
+    }
+    .lightbox-nav:hover { background: #d9204a; }
+    .lightbox-nav svg { width: 22px; height: 22px; fill: #fff; }
+    .lightbox-nav.lb-prev { left: 24px; }
+    .lightbox-nav.lb-next { right: 24px; }
+
+    @media (max-width: 768px) {
+      .carousel-slide { flex: 0 0 calc(80% - 8px); }
+      .carousel-btn.prev { left: 4px; }
+      .carousel-btn.next { right: 4px; }
+    }
+    @media (max-width: 480px) {
+      .carousel-slide { flex: 0 0 calc(92% - 4px); }
+    }
+
+    /* ───────────── GARANTIA ───────────── */
+    #garantia { padding: 80px 0; background: var(--tt-white); }
+    .garantia-inner {
+      display: flex; gap: 48px; align-items: center;
+      background: linear-gradient(135deg, #fff5f7 0%, #f0fffe 100%);
+      border: 2px solid var(--tt-red);
+      border-radius: 24px; padding: 48px;
+    }
+    .garantia-seal {
+      width: 160px; height: 160px; flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--tt-red); color: #fff;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 16px;
+      box-shadow: 0 8px 32px rgba(254,44,85,0.35);
+    }
+    .garantia-seal .num { font-family: 'Montserrat', sans-serif; font-size: 48px; font-weight: 900; line-height: 1; }
+    .garantia-seal .unit { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+    .garantia-seal .word { font-size: 11px; font-weight: 600; opacity: 0.85; }
+    .garantia-title { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 900; margin-bottom: 14px; }
+    .garantia-title span { color: var(--tt-red); }
+    .garantia-text { font-size: 16px; color: var(--tt-muted); line-height: 1.7; }
+
+    /* ───────────── PRICING ───────────── */
+    #pricing { padding: 90px 0; background: var(--tt-black); }
+    .pricing-header { text-align: center; margin-bottom: 52px; }
+    .pricing-header .section-title { color: var(--tt-white); }
+    .pricing-header .section-title span { color: var(--tt-red); }
+    .pricing-header .section-sub { color: rgba(255,255,255,0.60); margin: 0 auto; }
+
+    .pricing-card {
+      max-width: 540px; margin: 0 auto;
+      background: rgba(255,255,255,0.05);
+      border: 2px solid var(--tt-red);
+      border-radius: 24px;
+      padding: 48px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--tt-red) 0%, var(--tt-cyan) 100%);
+    }
+    .pricing-popular {
+      position: absolute; top: 18px; right: -30px;
+      background: var(--tt-cyan); color: var(--tt-black);
+      font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+      padding: 5px 40px;
+      transform: rotate(45deg);
+    }
+    .pricing-product-name { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.60); margin-bottom: 8px; }
+    .pricing-title { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 900; color: var(--tt-white); margin-bottom: 28px; }
+
+    .pricing-includes { margin-bottom: 32px; }
+    .pricing-includes-title { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.50); margin-bottom: 16px; }
+    .pricing-item {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 15px; color: rgba(255,255,255,0.85);
+      padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+      text-align: left;
+    }
+    .pricing-item:last-child { border-bottom: none; }
+    .pricing-item .pi-icon { color: var(--tt-cyan); font-size: 16px; flex-shrink: 0; }
+
+    .pricing-price-block { margin-bottom: 28px; }
+    .pricing-de {
+      font-size: 16px; color: rgba(255,255,255,0.40);
+      text-decoration: line-through; margin-bottom: 4px;
+    }
+    .pricing-por-label { font-size: 13px; color: rgba(255,255,255,0.60); }
+    .pricing-price { font-family: 'Montserrat', sans-serif; font-size: 64px; font-weight: 900; color: var(--tt-red); line-height: 1; }
+    .pricing-price sub { font-size: 28px; vertical-align: middle; }
+    .pricing-price-note { font-size: 14px; color: rgba(255,255,255,0.50); margin-top: 6px; }
+
+    .pricing-guarantee { margin-top: 18px; font-size: 13px; color: rgba(255,255,255,0.45); }
+
+    /* ───────────── FAQ ───────────── */
+    #faq { padding: 80px 0; background: var(--tt-gray); }
+    .faq-grid { max-width: 720px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid var(--tt-gray2);
+      padding: 24px 0;
+    }
+    .faq-question {
+      display: flex; justify-content: space-between; align-items: center;
+      cursor: pointer; font-size: 17px; font-weight: 700;
+      gap: 16px; user-select: none;
+    }
+    .faq-question .icon {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--tt-red); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0; transition: transform .25s;
+    }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s ease, padding .25s;
+    }
+    .faq-answer-inner { padding-top: 14px; font-size: 15px; color: var(--tt-muted); line-height: 1.7; }
+    .faq-item.open .faq-answer { max-height: 400px; }
+    .faq-item.open .icon { transform: rotate(45deg); }
+
+    /* ───────────── FINAL CTA ───────────── */
+    #final-cta {
+      padding: 100px 0;
+      background: var(--gradient-hero);
+      position: relative; overflow: hidden;
+    }
+    #final-cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(254,44,85,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .final-cta-inner { position: relative; z-index: 2; text-align: center; }
+    .final-cta-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(30px, 5vw, 56px);
+      font-weight: 900; color: var(--tt-white); line-height: 1.1; margin-bottom: 20px;
+    }
+    .final-cta-title span { color: var(--tt-red); }
+    .final-cta-sub { font-size: 18px; color: rgba(255,255,255,0.70); margin-bottom: 48px; max-width: 540px; margin-left: auto; margin-right: auto; }
+    .final-cta-price {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px; font-weight: 800; color: rgba(255,255,255,0.80);
+      margin-bottom: 24px;
+    }
+    .final-cta-price strong { color: var(--tt-red); font-size: 24px; }
+
+    /* ───────────── FOOTER ───────────── */
+    #footer {
+      background: #000; color: rgba(255,255,255,0.45);
+      padding: 40px 20px; text-align: center; font-size: 13px;
+    }
+    .footer-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px; font-weight: 900; color: var(--tt-white);
+      margin-bottom: 12px;
+    }
+    .footer-logo span { color: var(--tt-red); }
+    .footer-links { margin-bottom: 16px; }
+    .footer-links a { color: rgba(255,255,255,0.45); margin: 0 10px; transition: color .2s; }
+    .footer-links a:hover { color: var(--tt-red); }
+    .footer-disclaimer { max-width: 640px; margin: 0 auto; line-height: 1.6; }
+
+    /* ───────────── STICKY CTA ───────────── */
+    #sticky-cta {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(1,1,1,0.97);
+      border-top: 2px solid var(--tt-red);
+      padding: 14px 20px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      transform: translateY(100%);
+      transition: transform .4s;
+    }
+    #sticky-cta.visible { transform: translateY(0); }
+    .sticky-cta-text { color: #fff; font-size: 15px; font-weight: 600; }
+    .sticky-cta-text span { color: var(--tt-red); }
+    .sticky-btn {
+      background: var(--tt-red); color: #fff;
+      font-size: 14px; font-weight: 800;
+      padding: 12px 24px; border-radius: 50px;
+      white-space: nowrap; cursor: pointer;
+      transition: opacity .2s;
+    }
+    .sticky-btn:hover { opacity: 0.88; }
+
+    /* ───────────── RESPONSIVE ───────────── */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-visual { order: -1; }
+      .hero-float-badge { display: none; }
+      .produto-inner { grid-template-columns: 1fr; gap: 40px; }
+      .produto-visual { display: none; }
+      .para-quem-grid { grid-template-columns: 1fr; }
+      .garantia-inner { flex-direction: column; text-align: center; padding: 32px 24px; }
+      .pricing-card { padding: 32px 24px; }
+      .pricing-price { font-size: 52px; }
+      .btn-lg { font-size: 16px; padding: 18px 32px; }
+      #sticky-cta { flex-direction: column; text-align: center; }
+      .strip-divider { display: none; }
+    }
+
+    /* ───────────── ANIMATIONS ───────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp .7s ease both; }
+    .delay-1 { animation-delay: .15s; }
+    .delay-2 { animation-delay: .30s; }
+    .delay-3 { animation-delay: .45s; }
+
+    /* TikTok logo divider */
+    .tt-divider {
+      display: flex; align-items: center; gap: 16px;
+      margin: 0 auto 48px; max-width: 400px; justify-content: center;
+    }
+    .tt-divider-line { flex: 1; height: 1px; background: var(--tt-gray2); }
+    .tt-divider-icon { font-size: 24px; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- LEFT: COPY -->
+      <div class="hero-copy">
+        <div class="hero-eyebrow fade-up">
+          <div class="hero-eyebrow-line"></div>
+          <span class="hero-eyebrow-text">Cartilha TikTok Shop</span>
+        </div>
+
+        <p class="hero-pretitle fade-up delay-1">
+          Cartilha TikTok Shop — Guia Visual Completo de <strong class="hero-pretitle-pages">+80 Páginas</strong>
+        </p>
+        <h1 class="hero-title fade-up delay-1">
+          Aprenda a Vender no TikTok Shop
+          <span class="accent">Do Zero à Primeira Venda</span>
+        </h1>
+
+        <p class="hero-sub fade-up delay-2">
+          O guia completo, prático e direto ao ponto para abrir sua loja, escolher os produtos certos, precificar com lucro, criar conteúdo que converte e fazer sua operação funcionar de verdade.
+        </p>
+
+        <ul class="hero-features fade-up delay-2">
+          <li class="hero-feature">
+            <div class="hero-feature-icon">✓</div>
+            <span><strong>80 páginas</strong> de conteúdo organizado e aplicável</span>
+          </li>
+          <li class="hero-feature">
+            <div class="hero-feature-icon">✓</div>
+            <span><strong>5 bônus exclusivos</strong> — mais de 183 páginas extras</span>
+          </li>
+          <li class="hero-feature">
+            <div class="hero-feature-icon">✓</div>
+            <span>Para iniciantes e quem já vende em outros marketplaces</span>
+          </li>
+          <li class="hero-feature">
+            <div class="hero-feature-icon">✓</div>
+            <span>Fontes oficiais verificadas — sem achismo, só método</span>
+          </li>
+        </ul>
+
+        <div class="hero-cta-group fade-up delay-3">
+          <a href="#pricing" class="btn btn-primary btn-lg btn-full">
+            🛒 Quero Minha Cartilha Agora
+          </a>
+          <p class="hero-cta-note">🔒 Acesso imediato • Pagamento 100% seguro • Garantia de 7 dias</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: VISUAL -->
+      <div class="hero-visual fade-up delay-2">
+        <div class="hero-mockup">
+          <span class="hero-float-badge top-left">📦 80 páginas</span>
+          <img
+            src="assets/001_01_Cartilha_TikTok_Shop_80_paginas_pagina_001.png"
+            alt="Capa da Cartilha TikTok Shop"
+            class="hero-mockup-img"
+          />
+          <span class="hero-float-badge bottom-right">✅ + 5 Bônus</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SOCIAL PROOF STRIP ═══════════════ -->
+<div id="social-strip">
+  <div class="container">
+    <div class="strip-content">
+      <div class="strip-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span>+260 páginas de conteúdo</span>
+      </div>
+      <div class="strip-divider"></div>
+      <div class="strip-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+        <span>Fontes oficiais verificadas</span>
+      </div>
+      <div class="strip-divider"></div>
+      <div class="strip-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+        <span>Garantia de 7 dias</span>
+      </div>
+      <div class="strip-divider"></div>
+      <div class="strip-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 3.21-1.81 6-4.72 7.28L13 17v5h5l-1.22-1.22C19.91 19.07 22 15.76 22 12c0-5.18-3.95-9.45-9-9.95zM11 2.05C5.95 2.55 2 6.82 2 12c0 3.76 2.09 7.07 5.22 8.78L6 22h5v-5l-2.28 2.28C7.81 18 6 15.21 6 12c0-4.08 3.05-7.44 7-7.93V2.05z"/></svg>
+        <span>Acesso imediato ao PDF</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ DORES ═══════════════ -->
+<section id="dores">
+  <div class="container">
+    <h2 class="dores-title">
+      Você já se sentiu assim tentando<br/>
+      <span>vender no TikTok Shop?</span>
+    </h2>
+    <div class="dores-grid">
+      <div class="dore-card">
+        <div class="dore-emoji">😰</div>
+        <p class="dore-text"><strong>"Não sei por onde começar."</strong> Abrir uma loja no TikTok parece complicado — documentação, cadastro, aprovação... e ninguém explica direito.</p>
+      </div>
+      <div class="dore-card">
+        <div class="dore-emoji">💸</div>
+        <p class="dore-text"><strong>"Tenho medo de prejudicar minha margem."</strong> Comissão, frete, imposto, custo de mídia — você soma tudo e não sabe se vai sobrar lucro.</p>
+      </div>
+      <div class="dore-card">
+        <div class="dore-emoji">🎥</div>
+        <p class="dore-text"><strong>"Não sei o que falar nos vídeos."</strong> Fica na frente do celular, trava, não sabe como apresentar o produto sem parecer amador.</p>
+      </div>
+      <div class="dore-card">
+        <div class="dore-emoji">🤷</div>
+        <p class="dore-text"><strong>"Já vendo no Mercado Livre mas no TikTok é diferente."</strong> As regras, as políticas, o algoritmo — tudo muda. O que funcionava lá, não funciona aqui.</p>
+      </div>
+      <div class="dore-card">
+        <div class="dore-emoji">📦</div>
+        <p class="dore-text"><strong>"Não sei escolher o produto certo."</strong> Tem muito produto em tendência, mas qual realmente tem demanda e margem? Fica na dúvida e trava.</p>
+      </div>
+      <div class="dore-card">
+        <div class="dore-emoji">🔄</div>
+        <p class="dore-text"><strong>"Fiz a primeira venda mas não sei manter."</strong> A operação fica bagunçada: pedido, expedição, atendimento, pós-venda — falta um processo claro.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PRODUTO ═══════════════ -->
+<section id="produto">
+  <div class="container">
+    <div class="produto-inner">
+
+      <!-- INFO -->
+      <div>
+        <div class="produto-tag"><span class="tag">O Produto</span></div>
+        <h2 class="produto-title">
+          A <span>Cartilha Definitiva</span> de Como<br/>Vender no TikTok Shop
+        </h2>
+        <p class="produto-desc">
+          80 páginas organizadas por módulos, com linguagem direta, exemplos reais e fontes verificadas. 
+          Um guia prático que acompanha você do cadastro da loja até a revisão da primeira operação — 
+          sem enrolação, sem promessas vazias.
+        </p>
+
+        <div class="modulos-list">
+          <div class="modulo-item">
+            <div class="modulo-num">01</div>
+            <div class="modulo-info">
+              <div class="modulo-title-text">Fundamentos do TikTok Shop</div>
+              <div class="modulo-pages">Págs. 5–12 · Descoberta, papéis, jornada do comprador, custos e conformidade</div>
+            </div>
+          </div>
+          <div class="modulo-item">
+            <div class="modulo-num">02</div>
+            <div class="modulo-info">
+              <div class="modulo-title-text">Abertura e Configuração da Loja</div>
+              <div class="modulo-pages">Págs. 13–22 · Documentação, cadastro, segurança, fiscal, banco e revisão</div>
+            </div>
+          </div>
+          <div class="modulo-item">
+            <div class="modulo-num">03</div>
+            <div class="modulo-info">
+              <div class="modulo-title-text">Produtos e Fornecedores</div>
+              <div class="modulo-pages">Págs. 23–32 · Seleção, amostras, negociação, estoque e primeiro catálogo</div>
+            </div>
+          </div>
+          <div class="modulo-item">
+            <div class="modulo-num">04</div>
+            <div class="modulo-info">
+              <div class="modulo-title-text">Anúncios e Precificação</div>
+              <div class="modulo-pages">Págs. 33–44 · Cadastro, variações, taxas, margem, promoções e publicação</div>
+            </div>
+          </div>
+          <div class="modulo-item">
+            <div class="modulo-num">05</div>
+            <div class="modulo-info">
+              <div class="modulo-title-text">Primeiras Vendas</div>
+              <div class="modulo-pages">Págs. 45–54 · Plano de teste, perfil, calendário, atendimento e campanhas</div>
+            </div>
+          </div>
+          <div class="modulo-item">
+            <div class="modulo-num">06</div>
+            <div class="modulo-info">
+              <div class="modulo-title-text">Vídeos, Lives e Afiliados</div>
+              <div class="modulo-pages">Págs. 55–62 · Demonstração, produção, transmissão e criadores</div>
+            </div>
+          </div>
+          <div class="modulo-item">
+            <div class="modulo-num">07</div>
+            <div class="modulo-info">
+              <div class="modulo-title-text">Pedidos, Logística e Recebimentos</div>
+              <div class="modulo-pages">Págs. 63–70 · Expedição, ocorrências, pós-venda e caixa</div>
+            </div>
+          </div>
+          <div class="modulo-item">
+            <div class="modulo-num">08</div>
+            <div class="modulo-info">
+              <div class="modulo-title-text">Gestão, Erros e Crescimento</div>
+              <div class="modulo-pages">Págs. 71–80 · Indicadores, auditoria, checklist e plano de ação</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VISUAL -->
+      <div class="produto-visual">
+        <div class="produto-card-img">
+          <img src="assets/003_01_Cartilha_TikTok_Shop_80_paginas_pagina_003.png"
+               alt="Sumário da Cartilha TikTok Shop" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ BÔNUS ═══════════════ -->
+<section id="bonus">
+  <div class="container">
+    <div class="bonus-header">
+      <span class="badge badge-cyan" style="margin-bottom:16px;">🎁 Bônus Exclusivos</span>
+      <h2 class="section-title">
+        Você não leva só a cartilha.<br/><span>Você leva um kit completo.</span>
+      </h2>
+      <p class="section-sub">
+        Além das 80 páginas da cartilha principal, você recebe 5 materiais extras que transformam o seu aprendizado em ação.
+      </p>
+    </div>
+
+    <div class="bonus-grid">
+      <!-- BONUS 1 -->
+      <div class="bonus-card">
+        <span class="bonus-num">Bônus 1</span>
+        <div class="bonus-icon">🧮</div>
+        <div class="bonus-title">Calculadora de Lucro</div>
+        <p class="bonus-desc">
+          Manual de fórmulas e exemplos para calcular sua margem real no TikTok Shop. Comissão, frete, imposto, custo de mídia e custo de criador — tudo no papel, sem surpresas.
+        </p>
+        <p class="bonus-pages">📄 13 páginas</p>
+      </div>
+
+      <!-- BONUS 2 -->
+      <div class="bonus-card">
+        <span class="bonus-num">Bônus 2</span>
+        <div class="bonus-icon">📦</div>
+        <div class="bonus-title">Guia de Produtos e Fornecedores</div>
+        <p class="bonus-desc">
+          Da ideia à decisão de compra documentada. Os 4 filtros do percurso: elegibilidade, necessidade do comprador, viabilidade econômica e execução. Com ficha por SKU e modelos de mensagens para fornecedores.
+        </p>
+        <p class="bonus-pages">📄 12 páginas</p>
+      </div>
+
+      <!-- BONUS 3 -->
+      <div class="bonus-card">
+        <span class="bonus-num">Bônus 3</span>
+        <div class="bonus-icon">🎬</div>
+        <div class="bonus-title">100 Roteiros Originais</div>
+        <p class="bonus-desc">
+          Biblioteca completa de cenas, falas e chamadas responsáveis para vídeos de demonstração de produtos físicos. Cada roteiro com cena, fala completa, chamada e cuidados de produção.
+        </p>
+        <p class="bonus-pages">📄 52 páginas</p>
+      </div>
+
+      <!-- BONUS 4 -->
+      <div class="bonus-card">
+        <span class="bonus-num">Bônus 4</span>
+        <div class="bonus-icon">🤝</div>
+        <div class="bonus-title">Kit de Afiliados e Criadores</div>
+        <p class="bonus-desc">
+          Seleção, convite, briefing e acompanhamento. Modelos completos de mensagens para organizar parcerias com criadores sem confundir comissão, amostra, cachê e direito de uso.
+        </p>
+        <p class="bonus-pages">📄 13 páginas</p>
+      </div>
+
+      <!-- BONUS 5 -->
+      <div class="bonus-card">
+        <span class="bonus-num">Bônus 5</span>
+        <div class="bonus-icon">🚀</div>
+        <div class="bonus-title">Guia de Migração de Marketplaces</div>
+        <p class="bonus-desc">
+          Mercado Livre, Shopee e Amazon para TikTok Shop Brasil. Roteiro completo: auditoria, seleção de SKUs, reconciliação de estoque, recálculo de margem, adaptação de conteúdo e piloto.
+        </p>
+        <p class="bonus-pages">📄 13 páginas</p>
+      </div>
+    </div>
+
+    <div class="bonus-total-box">
+      <p class="bonus-total-label">Total de conteúdo que você recebe</p>
+      <div class="bonus-total-value">+260 páginas</div>
+      <p class="bonus-total-desc">Cartilha principal + 5 bônus exclusivos = o kit mais completo do mercado para vender no TikTok Shop</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PARA QUEM É ═══════════════ -->
+<section id="para-quem" class="section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <span class="tag" style="margin-bottom:12px;">Para quem é?</span>
+      <h2 class="section-title">
+        Esta cartilha é <span>feita para você</span> se…
+      </h2>
+    </div>
+
+    <div class="para-quem-grid">
+      <!-- SIM -->
+      <div>
+        <div class="para-quem-col-title yes">
+          ✅ É pra você se…
+        </div>
+        <ul class="para-quem-list">
+          <li class="para-quem-item">
+            <span class="check-icon">✅</span>
+            <span>Quer começar a vender no TikTok Shop mas não sabe por onde começar</span>
+          </li>
+          <li class="para-quem-item">
+            <span class="check-icon">✅</span>
+            <span>Já vende no Mercado Livre, Shopee ou Amazon e quer expandir para o TikTok</span>
+          </li>
+          <li class="para-quem-item">
+            <span class="check-icon">✅</span>
+            <span>Quer entender como calcular sua margem real antes de investir em estoque</span>
+          </li>
+          <li class="para-quem-item">
+            <span class="check-icon">✅</span>
+            <span>Precisa de roteiros prontos para criar vídeos de demonstração de produto</span>
+          </li>
+          <li class="para-quem-item">
+            <span class="check-icon">✅</span>
+            <span>Quer trabalhar com criadores e afiliados de forma profissional e organizada</span>
+          </li>
+          <li class="para-quem-item">
+            <span class="check-icon">✅</span>
+            <span>Busca um guia com fontes verificadas, sem promessas vazias ou achismo</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- NÃO -->
+      <div>
+        <div class="para-quem-col-title no">
+          ❌ Não é pra você se…
+        </div>
+        <ul class="para-quem-list">
+          <li class="para-quem-item">
+            <span class="check-icon">❌</span>
+            <span>Procura fórmulas mágicas de enriquecimento rápido sem esforço</span>
+          </li>
+          <li class="para-quem-item">
+            <span class="check-icon">❌</span>
+            <span>Quer um produto "que faz tudo sozinho" sem precisar aprender nada</span>
+          </li>
+          <li class="para-quem-item">
+            <span class="check-icon">❌</span>
+            <span>Não está disposto a montar uma operação real com responsabilidade</span>
+          </li>
+          <li class="para-quem-item">
+            <span class="check-icon">❌</span>
+            <span>Prefere continuar esperando "o momento certo" em vez de dar o primeiro passo</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SUMÁRIO VISUAL ═══════════════ -->
+<section id="sumario" class="section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 48px;">
+      <span class="tag" style="margin-bottom:12px;">O que você vai aprender</span>
+      <h2 class="section-title">80 páginas organizadas<br/><span>para você agir agora</span></h2>
+      <p class="section-sub text-center" style="margin: 0 auto 0;">
+        Do primeiro cadastro ao plano de expansão — cada módulo tem objetivo claro e aplicação imediata.
+      </p>
+    </div>
+    <div class="sumario-grid">
+      <div class="sumario-card">
+        <div class="sumario-pages">Págs. 1–4</div>
+        <div class="sumario-card-title">Apresentação e mapa</div>
+        <div class="sumario-card-desc">Entenda o que você vai construir e como usar a cartilha do seu jeito.</div>
+      </div>
+      <div class="sumario-card">
+        <div class="sumario-pages">Págs. 5–12</div>
+        <div class="sumario-card-title">Fundamentos</div>
+        <div class="sumario-card-desc">Descoberta, papéis de vendedor e criador, jornada de compra, custos e conformidade.</div>
+      </div>
+      <div class="sumario-card">
+        <div class="sumario-pages">Págs. 13–22</div>
+        <div class="sumario-card-title">Abertura de loja</div>
+        <div class="sumario-card-desc">Documentação, cadastro, segurança, banco, fiscal, endereços e conta de conteúdo.</div>
+      </div>
+      <div class="sumario-card">
+        <div class="sumario-pages">Págs. 23–32</div>
+        <div class="sumario-card-title">Produtos e fornecedores</div>
+        <div class="sumario-card-desc">Problema do cliente, seleção, amostras, diligência, negociação e primeiro catálogo.</div>
+      </div>
+      <div class="sumario-card">
+        <div class="sumario-pages">Págs. 33–44</div>
+        <div class="sumario-card-title">Anúncios e precificação</div>
+        <div class="sumario-card-desc">Variações, descrição, imagens, taxas, margem, promoções e revisão pré-publicação.</div>
+      </div>
+      <div class="sumario-card">
+        <div class="sumario-pages">Págs. 45–54</div>
+        <div class="sumario-card-title">Primeiras vendas</div>
+        <div class="sumario-card-desc">Plano de teste, perfil, calendário, diagnóstico, atendimento, publicidade e aprendizado.</div>
+      </div>
+      <div class="sumario-card">
+        <div class="sumario-pages">Págs. 55–62</div>
+        <div class="sumario-card-title">Vídeos, lives e afiliados</div>
+        <div class="sumario-card-desc">Demonstração, produção, transmissão ao vivo e colaboração com criadores.</div>
+      </div>
+      <div class="sumario-card">
+        <div class="sumario-pages">Págs. 63–70</div>
+        <div class="sumario-card-title">Pedidos e logística</div>
+        <div class="sumario-card-desc">Expedição, ocorrências, pós-venda, conciliação e controle de caixa.</div>
+      </div>
+      <div class="sumario-card">
+        <div class="sumario-pages">Págs. 71–76</div>
+        <div class="sumario-card-title">Gestão e crescimento</div>
+        <div class="sumario-card-desc">Indicadores, auditoria de processos, compras e estratégia de expansão.</div>
+      </div>
+      <div class="sumario-card">
+        <div class="sumario-pages">Págs. 77–80</div>
+        <div class="sumario-card-title">Checklist e plano de ação</div>
+        <div class="sumario-card-desc">Checklist final, fontes oficiais e referências completas para consultar sempre que precisar.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PREVIEW ═══════════════ -->
+<section id="preview">
+  <div class="container">
+    <div class="preview-header">
+      <span class="badge" style="margin-bottom:16px;">👀 Veja por dentro</span>
+      <h2 class="section-title">Dê uma <span>espiada</span> no conteúdo</h2>
+      <p class="section-sub">Cada página foi projetada para ser visual, clara e fácil de aplicar.</p>
+    </div>
+    <!-- CARROSSEL -->
+    <div class="carousel-wrapper" id="mainCarousel">
+      <button class="carousel-btn prev" id="carouselPrev" aria-label="Anterior">
+        <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide" data-index="0">
+          <img src="assets/001_01_Cartilha_TikTok_Shop_80_paginas_pagina_001.png" alt="Capa da Cartilha" loading="lazy" />
+        </div>
+        <div class="carousel-slide" data-index="1">
+          <img src="assets/002_01_Cartilha_TikTok_Shop_80_paginas_pagina_002.png" alt="Apresentação" loading="lazy" />
+        </div>
+        <div class="carousel-slide" data-index="2">
+          <img src="assets/003_01_Cartilha_TikTok_Shop_80_paginas_pagina_003.png" alt="Sumário" loading="lazy" />
+        </div>
+        <div class="carousel-slide" data-index="3">
+          <img src="assets/004_01_Cartilha_TikTok_Shop_80_paginas_pagina_004.png" alt="Página 4" loading="lazy" />
+        </div>
+        <div class="carousel-slide" data-index="4">
+          <img src="assets/005_01_Cartilha_TikTok_Shop_80_paginas_pagina_005.png" alt="Página 5" loading="lazy" />
+        </div>
+        <div class="carousel-slide" data-index="5">
+          <img src="assets/006_01_Cartilha_TikTok_Shop_80_paginas_pagina_006.png" alt="Página 6" loading="lazy" />
+        </div>
+        <div class="carousel-slide" data-index="6">
+          <img src="assets/007_01_Cartilha_TikTok_Shop_80_paginas_pagina_007.png" alt="Página 7" loading="lazy" />
+        </div>
+        <div class="carousel-slide" data-index="7">
+          <img src="assets/081_02_Bonus_Calculadora_de_Lucro_pagina_001.png" alt="Bônus 1 – Calculadora" loading="lazy" />
+        </div>
+        <div class="carousel-slide" data-index="8">
+          <img src="assets/094_03_Bonus_Produtos_e_Fornecedores_pagina_001.png" alt="Bônus 2 – Produtos" loading="lazy" />
+        </div>
+        <div class="carousel-slide" data-index="9">
+          <img src="assets/106_04_Bonus_100_Roteiros_Originais_pagina_001.png" alt="Bônus 3 – Roteiros" loading="lazy" />
+        </div>
+        <div class="carousel-slide" data-index="10">
+          <img src="assets/158_05_Bonus_Kit_Afiliados_e_Criadores_pagina_001.png" alt="Bônus 4 – Kit Afiliados" loading="lazy" />
+        </div>
+        <div class="carousel-slide" data-index="11">
+          <img src="assets/171_06_Bonus_Migracao_de_Marketplaces_pagina_001.png" alt="Bônus 5 – Migração" loading="lazy" />
+        </div>
+      </div>
+
+      <button class="carousel-btn next" id="carouselNext" aria-label="Próximo">
+        <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+    </div>
+
+    <!-- Dots -->
+    <div class="carousel-dots" id="carouselDots"></div>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">×</button>
+      <button class="lightbox-nav lb-prev" id="lbPrev">
+        <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+      <button class="lightbox-nav lb-next" id="lbNext">
+        <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ GARANTIA ═══════════════ -->
+<section id="garantia">
+  <div class="container">
+    <div class="garantia-inner">
+      <div class="garantia-seal">
+        <div class="num">7</div>
+        <div class="unit">dias</div>
+        <div class="word">de garantia</div>
+      </div>
+      <div>
+        <h2 class="garantia-title">Risco <span>zero</span> para você</h2>
+        <p class="garantia-text">
+          Você tem <strong>7 dias de garantia completa</strong>. Se por qualquer motivo o material não atender às suas expectativas, basta entrar em contato e devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia, sem enrolação.
+          <br/><br/>
+          Ou seja: você pode ler toda a cartilha e os 5 bônus sem nenhum risco. A única coisa que você tem a perder é a oportunidade de aprender o método certo para vender no TikTok Shop.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PRICING ═══════════════ -->
+<section id="pricing">
+  <div class="container">
+    <div class="pricing-header">
+      <span class="badge" style="margin-bottom:16px;">💳 Investimento</span>
+      <h2 class="section-title">Comece hoje por<br/><span>um investimento mínimo</span></h2>
+      <p class="section-sub">
+        Tudo que você precisa para montar sua operação no TikTok Shop — com método, segurança e resultado.
+      </p>
+    </div>
+
+    <div class="pricing-card">
+      <span class="pricing-popular">Mais Completo</span>
+      <p class="pricing-product-name">Cartilha TikTok Shop</p>
+      <p class="pricing-title">Do Zero à Primeira Venda<br/>+ 5 Bônus Exclusivos</p>
+
+      <div class="pricing-includes">
+        <p class="pricing-includes-title">O que você recebe</p>
+        <div class="pricing-item">
+          <span class="pi-icon">✅</span>
+          <span><strong>Cartilha principal</strong> — 80 páginas em PDF</span>
+        </div>
+        <div class="pricing-item">
+          <span class="pi-icon">🧮</span>
+          <span><strong>Bônus 1:</strong> Calculadora de Lucro (13 págs.)</span>
+        </div>
+        <div class="pricing-item">
+          <span class="pi-icon">📦</span>
+          <span><strong>Bônus 2:</strong> Guia de Produtos e Fornecedores (12 págs.)</span>
+        </div>
+        <div class="pricing-item">
+          <span class="pi-icon">🎬</span>
+          <span><strong>Bônus 3:</strong> 100 Roteiros Originais (52 págs.)</span>
+        </div>
+        <div class="pricing-item">
+          <span class="pi-icon">🤝</span>
+          <span><strong>Bônus 4:</strong> Kit de Afiliados e Criadores (13 págs.)</span>
+        </div>
+        <div class="pricing-item">
+          <span class="pi-icon">🚀</span>
+          <span><strong>Bônus 5:</strong> Guia de Migração de Marketplaces (13 págs.)</span>
+        </div>
+        <div class="pricing-item">
+          <span class="pi-icon">⚡</span>
+          <span><strong>Acesso imediato</strong> — entrega no e-mail após pagamento</span>
+        </div>
+        <div class="pricing-item">
+          <span class="pi-icon">🔄</span>
+          <span><strong>Atualizações</strong> de conteúdo incluídas</span>
+        </div>
+      </div>
+
+      <div class="pricing-price-block">
+        <p class="pricing-de">De R$ 97,00</p>
+        <p class="pricing-por-label">Por apenas</p>
+        <div class="pricing-price"><sub>R$</sub>27<sup style="font-size:32px;vertical-align:super;">,90</sup></div>
+        <p class="pricing-price-note">Pagamento único • Acesso vitalício</p>
+      </div>
+
+      <a href="https://pay.wiapy.com/6ae7aeccc2ac364fc5638856" target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-full" style="margin-bottom:16px;">
+        🛒 Quero Comprar Agora — R$ 27,90
+      </a>
+      <a href="https://pay.wiapy.com/6ae7aeccc2ac364fc5638856" target="_blank" rel="noopener" class="btn btn-secondary btn-full" style="font-size:15px; padding:14px 24px;">
+        💳 Parcelar no cartão
+      </a>
+
+      <p class="pricing-guarantee">🔒 Pagamento 100% seguro · 7 dias de garantia · Acesso imediato</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FAQ ═══════════════ -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <span class="tag" style="margin-bottom:12px;">Dúvidas frequentes</span>
+      <h2 class="section-title">Ficou com alguma <span>dúvida?</span></h2>
+    </div>
+    <div class="faq-grid">
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Como vou receber o material?</span>
+          <div class="icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Após a confirmação do pagamento, você recebe o link de acesso direto no seu e-mail em minutos. Todo o conteúdo é em PDF, que você pode ler no celular, tablet ou computador — quando quiser e quantas vezes quiser.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Funciona para quem nunca vendeu online?</span>
+          <div class="icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Sim! A cartilha foi criada exatamente para quem está começando do zero. Ela avança passo a passo, da abertura da loja à primeira venda, sem presumir conhecimento anterior. Ao mesmo tempo, quem já vende em outros marketplaces vai encontrar um guia específico para entender as diferenças do TikTok Shop.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>O material tem garantia de resultado de vendas?</span>
+          <div class="icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">A cartilha é um guia de método, não uma promessa de resultado. Os resultados dependem do seu produto, capital, execução e contexto de mercado. O que garantimos é um conteúdo honesto, organizado com fontes verificadas e 7 dias de garantia de satisfação — se não gostar, devolvemos 100% do valor.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Esse material é oficial do TikTok?</span>
+          <div class="icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Não. A Cartilha TikTok Shop é uma publicação independente, sem vínculo ou endosso do TikTok. Todas as informações sobre regras e políticas da plataforma foram verificadas em fontes oficiais do TikTok Shop Brasil e estão acompanhadas de referências. Recomendamos sempre consultar o painel oficial antes de tomar decisões operacionais.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Já vendo no Mercado Livre. Preciso desse material?</span>
+          <div class="icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Com certeza! O TikTok Shop tem políticas, ferramentas, custos e formas de descoberta completamente diferentes dos outros marketplaces. Uma aprovação no Mercado Livre não substitui aprovação no TikTok Shop. O material tem uma seção específica para quem já vende em outros canais, além do Bônus 5 exclusivo de migração de marketplaces.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Os bônus são separados da cartilha principal?</span>
+          <div class="icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Sim! Você recebe 6 arquivos PDF distintos: a cartilha principal (80 págs.) e os 5 bônus (Calculadora de Lucro, Guia de Produtos e Fornecedores, 100 Roteiros, Kit de Afiliados e Guia de Migração). São materiais complementares que se integram ao aprendizado da cartilha principal.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FINAL CTA ═══════════════ -->
+<section id="final-cta">
+  <div class="container">
+    <div class="final-cta-inner">
+      <h2 class="final-cta-title">
+        Sua operação no TikTok Shop<br/>começa com o <span>método certo.</span>
+      </h2>
+      <p class="final-cta-sub">
+        Não perca mais tempo com tentativa e erro. Pegue o guia que vai te mostrar o caminho completo — do cadastro à primeira venda, com confiança.
+      </p>
+      <p class="final-cta-price">
+        Cartilha + 5 Bônus por apenas <strong>R$ 27,90</strong>
+      </p>
+      <a href="#pricing" class="btn btn-primary btn-lg">
+        🛒 Garantir Meu Acesso Agora
+      </a>
+      <p style="margin-top: 20px; font-size: 14px; color: rgba(255,255,255,0.45);">
+        🔒 Pagamento seguro · Acesso imediato · 7 dias de garantia
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer id="footer">
+  <div class="footer-logo">Cartilha <span>TikTok</span> Shop</div>
+  <div class="footer-links">
+    <a href="#">Termos de Uso</a>
+    <a href="#">Política de Privacidade</a>
+    <a href="#">Contato</a>
+  </div>
+  <p class="footer-disclaimer">
+    Esta é uma publicação independente, sem vínculo ou endosso do TikTok. 
+    Exemplos financeiros são simulações e não representam projeção de resultado. 
+    A primeira venda depende de fatores que este material não controla; não há garantia de prazo, faturamento ou lucro.
+    Fontes oficiais verificadas em 31/10/2026.
+  </p>
+</footer>
+
+<!-- ═══════════════ STICKY CTA ═══════════════ -->
+<div id="sticky-cta">
+  <div class="sticky-cta-text">
+    Cartilha TikTok Shop + <span>5 Bônus</span> por R$ 27,90
+  </div>
+  <a href="#pricing" class="sticky-btn">Quero Agora →</a>
+</div>
+
+<!-- ═══════════════ SCRIPTS ═══════════════ -->
+<script>
+  /* ── FAQ Toggle ── */
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  /* ── Sticky CTA ── */
+  const stickyCta  = document.getElementById('sticky-cta');
+  const heroSection = document.getElementById('hero');
+  const stickyObs  = new IntersectionObserver(
+    ([e]) => stickyCta.classList.toggle('visible', !e.isIntersecting),
+    { threshold: 0.1 }
+  );
+  stickyObs.observe(heroSection);
+
+  /* ── Scroll animations ── */
+  const animEls = document.querySelectorAll('.fade-up');
+  const animObs = new IntersectionObserver(
+    (entries) => entries.forEach(e => {
+      if (e.isIntersecting) e.target.style.animationPlayState = 'running';
+    }),
+    { threshold: 0.1 }
+  );
+  animEls.forEach(el => {
+    el.style.animationPlayState = 'paused';
+    animObs.observe(el);
+  });
+
+  /* ══════════════════════════════════════
+     CAROUSEL
+  ══════════════════════════════════════ */
+  (function () {
+    const track      = document.getElementById('carouselTrack');
+    const slides     = Array.from(track.querySelectorAll('.carousel-slide'));
+    const btnPrev    = document.getElementById('carouselPrev');
+    const btnNext    = document.getElementById('carouselNext');
+    const dotsWrap   = document.getElementById('carouselDots');
+
+    /* Quantos slides visíveis por vez (responsivo) */
+    function visibleCount() {
+      if (window.innerWidth < 480) return 1;
+      if (window.innerWidth < 768) return 1;
+      return 3;
+    }
+
+    let current = 0;
+    const total = slides.length;
+
+    /* Cria dots */
+    function buildDots() {
+      dotsWrap.innerHTML = '';
+      const steps = total - visibleCount() + 1;
+      for (let i = 0; i < steps; i++) {
+        const d = document.createElement('button');
+        d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', 'Slide ' + (i + 1));
+        d.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(d);
+      }
+    }
+
+    function updateDots() {
+      dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) =>
+        d.classList.toggle('active', i === current)
+      );
+    }
+
+    function slideWidth() {
+      const vc   = visibleCount();
+      const gap  = 18;
+      const wrap = track.parentElement.offsetWidth;
+      return (wrap - gap * (vc - 1)) / vc + gap;
+    }
+
+    function goTo(index) {
+      const maxIndex = total - visibleCount();
+      current = Math.max(0, Math.min(index, maxIndex));
+      track.style.transform = `translateX(-${current * slideWidth()}px)`;
+      btnPrev.disabled = current === 0;
+      btnNext.disabled = current >= maxIndex;
+      updateDots();
+    }
+
+    btnPrev.addEventListener('click', () => goTo(current - 1));
+    btnNext.addEventListener('click', () => goTo(current + 1));
+
+    /* Auto-play a cada 4 s */
+    let autoTimer = setInterval(() => {
+      const maxIndex = total - visibleCount();
+      goTo(current < maxIndex ? current + 1 : 0);
+    }, 4000);
+
+    /* Pausa ao interagir */
+    function pauseAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => {
+        const maxIndex = total - visibleCount();
+        goTo(current < maxIndex ? current + 1 : 0);
+      }, 5000);
+    }
+    btnPrev.addEventListener('click', pauseAuto);
+    btnNext.addEventListener('click', pauseAuto);
+    dotsWrap.addEventListener('click', pauseAuto);
+
+    /* Touch / swipe */
+    let startX = 0;
+    track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend',   e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) { goTo(current + (diff > 0 ? 1 : -1)); pauseAuto(); }
+    });
+
+    /* Rebuild on resize */
+    window.addEventListener('resize', () => { buildDots(); goTo(current); });
+
+    buildDots();
+    goTo(0);
+
+    /* ── LIGHTBOX ── */
+    const overlay  = document.getElementById('lightbox');
+    const lbImg    = document.getElementById('lightboxImg');
+    const lbClose  = document.getElementById('lightboxClose');
+    const lbPrev   = document.getElementById('lbPrev');
+    const lbNext   = document.getElementById('lbNext');
+    let   lbCurrent = 0;
+
+    const allSrcs = slides.map(s => s.querySelector('img').src);
+    const allAlts = slides.map(s => s.querySelector('img').alt);
+
+    function openLightbox(index) {
+      lbCurrent = index;
+      lbImg.src  = allSrcs[lbCurrent];
+      lbImg.alt  = allAlts[lbCurrent];
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lbGo(dir) {
+      lbCurrent = (lbCurrent + dir + total) % total;
+      lbImg.src = allSrcs[lbCurrent];
+      lbImg.alt = allAlts[lbCurrent];
+    }
+
+    slides.forEach((s, i) => s.addEventListener('click', () => openLightbox(i)));
+    lbClose.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeLightbox(); });
+    lbPrev.addEventListener('click', e => { e.stopPropagation(); lbGo(-1); });
+    lbNext.addEventListener('click', e => { e.stopPropagation(); lbGo(1);  });
+    document.addEventListener('keydown', e => {
+      if (!overlay.classList.contains('open')) return;
+      if (e.key === 'ArrowLeft')  lbGo(-1);
+      if (e.key === 'ArrowRight') lbGo(1);
+      if (e.key === 'Escape')     closeLightbox();
+    });
+  })();
+</script>
+
+</body>
+</html>

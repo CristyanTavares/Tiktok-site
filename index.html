@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -505,6 +505,236 @@
     }
     @media (max-width: 480px) {
       .carousel-slide { flex: 0 0 calc(92% - 4px); }
+    }
+
+    /* ───────────── PACOTES & DEPOIMENTOS (LOOP CAROUSELS) ───────────── */
+    #pacotes {
+      padding: 90px 0;
+      background: var(--tt-gray);
+      overflow: hidden;
+    }
+    .pacotes-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .pacotes-header .section-sub {
+      margin: 0 auto;
+    }
+
+    .loop-carousel {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding: 12px 0;
+    }
+    /* Fade edges for sleek infinite look */
+    .loop-carousel::before,
+    .loop-carousel::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 3;
+      pointer-events: none;
+    }
+    #pacotes .loop-carousel::before {
+      left: 0;
+      background: linear-gradient(to right, var(--tt-gray), transparent);
+    }
+    #pacotes .loop-carousel::after {
+      right: 0;
+      background: linear-gradient(to left, var(--tt-gray), transparent);
+    }
+    #depoimentos .loop-carousel::before {
+      left: 0;
+      background: linear-gradient(to right, var(--tt-dark), transparent);
+    }
+    #depoimentos .loop-carousel::after {
+      right: 0;
+      background: linear-gradient(to left, var(--tt-dark), transparent);
+    }
+
+    .loop-track {
+      display: flex;
+      width: max-content;
+      will-change: transform;
+    }
+    .loop-track.pacotes-track {
+      animation: infiniteScroll 28s linear infinite;
+    }
+    .loop-track.depoimentos-track {
+      animation: infiniteScroll 48s linear infinite;
+    }
+    /* Pausa o loop apenas quando o mouse passa por cima */
+    .loop-carousel:hover .loop-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes infiniteScroll {
+      0%   { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+
+    /* Card de Pacote */
+    .pacote-card {
+      flex: 0 0 300px;
+      height: 390px;
+      margin-right: 24px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      background: var(--tt-black);
+      box-shadow: var(--shadow-card);
+      border: 2px solid transparent;
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+    .pacote-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      border-color: var(--tt-red);
+      box-shadow: 0 14px 36px rgba(254,44,85,0.28);
+    }
+    .pacote-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .pacote-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 28px 18px 16px;
+      background: linear-gradient(to top, rgba(1,1,1,0.92) 0%, rgba(1,1,1,0.55) 65%, transparent 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .pacote-caption-text {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    .pacote-caption-tag {
+      background: var(--tt-red);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 4px 10px;
+      border-radius: 50px;
+      white-space: nowrap;
+    }
+
+    /* Seção de Depoimentos */
+    #depoimentos {
+      padding: 90px 0;
+      background: var(--tt-dark);
+      color: var(--tt-white);
+      overflow: hidden;
+    }
+    .depoimentos-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .depoimentos-header .section-title {
+      color: var(--tt-white);
+    }
+    .depoimentos-header .section-title span {
+      color: var(--tt-cyan);
+    }
+    .depoimentos-header .section-sub {
+      color: rgba(255,255,255,0.65);
+      margin: 0 auto;
+    }
+
+    .depoimento-card {
+      flex: 0 0 360px;
+      margin-right: 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--radius);
+      padding: 28px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .3s ease, border-color .3s ease, background .3s ease;
+    }
+    .depoimento-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--tt-cyan);
+      background: rgba(255,255,255,0.07);
+    }
+    .depoimento-top {
+      margin-bottom: 20px;
+    }
+    .depoimento-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .depoimento-stars {
+      color: #FFB800;
+      font-size: 15px;
+      letter-spacing: 2px;
+    }
+    .depoimento-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 50px;
+      background: rgba(37,244,238,0.14);
+      color: var(--tt-cyan);
+    }
+    .depoimento-quote {
+      font-size: 14.5px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.65;
+      font-style: normal;
+    }
+    .depoimento-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .depoimento-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--tt-red);
+      flex-shrink: 0;
+    }
+    .depoimento-name {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--tt-white);
+      line-height: 1.2;
+    }
+    .depoimento-role {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      margin-top: 3px;
+    }
+    .loop-hint {
+      text-align: center;
+      margin-top: 22px;
+      font-size: 13px;
+      color: var(--tt-muted);
+    }
+    #depoimentos .loop-hint {
+      color: rgba(255,255,255,0.45);
+    }
+
+    @media (max-width: 768px) {
+      .loop-carousel::before,
+      .loop-carousel::after { width: 32px; }
+      .pacote-card { flex: 0 0 250px; height: 330px; margin-right: 16px; }
+      .depoimento-card { flex: 0 0 300px; margin-right: 16px; padding: 22px 20px; }
     }
 
     /* ───────────── GARANTIA ───────────── */
@@ -1231,6 +1461,442 @@
       </button>
     </div>
   </div>
+</section>
+
+<!-- ═══════════════ PACOTES (PROVA SOCIAL) ═══════════════ -->
+<section id="pacotes">
+  <div class="container">
+    <div class="pacotes-header">
+      <span class="tag" style="margin-bottom:12px;">📦 Operação na Prática</span>
+      <h2 class="section-title">
+        Do estudo para a <span>expedição real</span>
+      </h2>
+      <p class="section-sub">
+        Veja o resultado de quem aplica o método da Cartilha TikTok Shop: pedidos embalados, etiquetados e prontos para coleta todos os dias.
+      </p>
+    </div>
+  </div>
+
+  <div class="loop-carousel" aria-label="Carrossel de pacotes enviados">
+    <div class="loop-track pacotes-track">
+      <!-- Grupo 1 (Original) -->
+      <div class="pacote-card">
+        <img src="assets/pacotes-1.jpg" alt="Pacotes prontos para envio no TikTok Shop" loading="lazy" />
+        <div class="pacote-caption">
+          <span class="pacote-caption-text">Lote etiquetado e conferido</span>
+          <span class="pacote-caption-tag">📦 Prontos</span>
+        </div>
+      </div>
+      <div class="pacote-card">
+        <img src="assets/pacotes-2.jpg" alt="Volume de pedidos embalados" loading="lazy" />
+        <div class="pacote-caption">
+          <span class="pacote-caption-text">Pico de vendas após vídeo</span>
+          <span class="pacote-caption-tag">🚀 Escala</span>
+        </div>
+      </div>
+      <div class="pacote-card">
+        <img src="assets/pacotes-3.jpg" alt="Caixas organizadas para expedição" loading="lazy" />
+        <div class="pacote-caption">
+          <span class="pacote-caption-text">Separação e coleta diária</span>
+          <span class="pacote-caption-tag">✅ No prazo</span>
+        </div>
+      </div>
+      <div class="pacote-card">
+        <img src="assets/pacotes-4.jpg" alt="Dezenas de pacotes no chão prontos para despacho" loading="lazy" />
+        <div class="pacote-caption">
+          <span class="pacote-caption-text">Operação enxuta e lucrativa</span>
+          <span class="pacote-caption-tag">🔥 Giro alto</span>
+        </div>
+      </div>
+      <div class="pacote-card">
+        <img src="assets/pacotes-5.jpg" alt="Detalhes de pacotes com etiqueta de envio" loading="lazy" />
+        <div class="pacote-caption">
+          <span class="pacote-caption-text">Padrão seguro de embalagem</span>
+          <span class="pacote-caption-tag">⭐ 100% Real</span>
+        </div>
+      </div>
+
+      <!-- Grupo 2 (Clone para Loop Infinito Perfeito) -->
+      <div class="pacote-card" aria-hidden="true">
+        <img src="assets/pacotes-1.jpg" alt="Pacotes prontos para envio no TikTok Shop" loading="lazy" />
+        <div class="pacote-caption">
+          <span class="pacote-caption-text">Lote etiquetado e conferido</span>
+          <span class="pacote-caption-tag">📦 Prontos</span>
+        </div>
+      </div>
+      <div class="pacote-card" aria-hidden="true">
+        <img src="assets/pacotes-2.jpg" alt="Volume de pedidos embalados" loading="lazy" />
+        <div class="pacote-caption">
+          <span class="pacote-caption-text">Pico de vendas após vídeo</span>
+          <span class="pacote-caption-tag">🚀 Escala</span>
+        </div>
+      </div>
+      <div class="pacote-card" aria-hidden="true">
+        <img src="assets/pacotes-3.jpg" alt="Caixas organizadas para expedição" loading="lazy" />
+        <div class="pacote-caption">
+          <span class="pacote-caption-text">Separação e coleta diária</span>
+          <span class="pacote-caption-tag">✅ No prazo</span>
+        </div>
+      </div>
+      <div class="pacote-card" aria-hidden="true">
+        <img src="assets/pacotes-4.jpg" alt="Dezenas de pacotes no chão prontos para despacho" loading="lazy" />
+        <div class="pacote-caption">
+          <span class="pacote-caption-text">Operação enxuta e lucrativa</span>
+          <span class="pacote-caption-tag">🔥 Giro alto</span>
+        </div>
+      </div>
+      <div class="pacote-card" aria-hidden="true">
+        <img src="assets/pacotes-5.jpg" alt="Detalhes de pacotes com etiqueta de envio" loading="lazy" />
+        <div class="pacote-caption">
+          <span class="pacote-caption-text">Padrão seguro de embalagem</span>
+          <span class="pacote-caption-tag">⭐ 100% Real</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="loop-hint">🖱️ Passe o mouse sobre as fotos para pausar o carrossel</p>
+</section>
+
+<!-- ═══════════════ DEPOIMENTOS (LOOP CAROUSEL) ═══════════════ -->
+<section id="depoimentos">
+  <div class="container">
+    <div class="depoimentos-header">
+      <span class="badge badge-cyan" style="margin-bottom:16px;">💬 Quem Aplicou Recomenda</span>
+      <h2 class="section-title">
+        Histórias reais de quem destravou<br/><span>suas vendas no TikTok Shop</span>
+      </h2>
+      <p class="section-sub">
+        De iniciantes começando do zero a vendedores experientes migrando de outros marketplaces.
+      </p>
+    </div>
+  </div>
+
+  <div class="loop-carousel" aria-label="Carrossel de depoimentos de alunos">
+    <div class="loop-track depoimentos-track">
+      <!-- 8 Depoimentos Originais -->
+      <!-- 1 -->
+      <div class="depoimento-card">
+        <div class="depoimento-top">
+          <div class="depoimento-meta-row">
+            <div class="depoimento-stars">★★★★★</div>
+            <span class="depoimento-badge">1ª venda em 9 dias</span>
+          </div>
+          <p class="depoimento-quote">
+            "Eu travava na documentação e tinha pavor de aparecer. Segui o passo a passo da abertura de loja e usei o Bônus dos 100 Roteiros focando só em mostrar o produto na mão. No 4º vídeo saiu minha primeira venda e hoje já despacho pacote todo dia!"
+          </p>
+        </div>
+        <div class="depoimento-author">
+          <img src="assets/depoimento-1.webp" alt="Juliana Mendes" class="depoimento-avatar" loading="lazy" />
+          <div>
+            <div class="depoimento-name">Juliana Mendes</div>
+            <div class="depoimento-role">Iniciante · Moda & Acessórios (SP)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="depoimento-card">
+        <div class="depoimento-top">
+          <div class="depoimento-meta-row">
+            <div class="depoimento-stars">★★★★★</div>
+            <span class="depoimento-badge">Migrou do Mercado Livre</span>
+          </div>
+          <p class="depoimento-quote">
+            "Já vendo no ML há 3 anos e achei que no TikTok Shop era só copiar os mesmos anúncios. Quebrei a cara até ler a Cartilha e o Guia de Migração. Ajustei minha margem na Calculadora e hoje o TikTok já representa 35% do meu faturamento mensal."
+          </p>
+        </div>
+        <div class="depoimento-author">
+          <img src="assets/depoimento-2.webp" alt="Rafael Costa" class="depoimento-avatar" loading="lazy" />
+          <div>
+            <div class="depoimento-name">Rafael Costa</div>
+            <div class="depoimento-role">Seller de Marketplace · Utilidades (MG)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="depoimento-card">
+        <div class="depoimento-top">
+          <div class="depoimento-meta-row">
+            <div class="depoimento-stars">★★★★★</div>
+            <span class="depoimento-badge">Margem protegida</span>
+          </div>
+          <p class="depoimento-quote">
+            "A Calculadora de Lucro sozinha já valeu 10 vezes o valor que paguei. Eu ia comprar estoque de um item da moda, mas quando simulei taxas e comissão de criador vi que daria prejuízo. Troquei de produto usando os 4 filtros do guia e lucrei de verdade!"
+          </p>
+        </div>
+        <div class="depoimento-author">
+          <img src="assets/depoimento-3.webp" alt="Camila Oliveira" class="depoimento-avatar" loading="lazy" />
+          <div>
+            <div class="depoimento-name">Camila Oliveira</div>
+            <div class="depoimento-role">Lojista · Beleza & Cuidados (PR)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="depoimento-card">
+        <div class="depoimento-top">
+          <div class="depoimento-meta-row">
+            <div class="depoimento-stars">★★★★★</div>
+            <span class="depoimento-badge">+40 pedidos/semana</span>
+          </div>
+          <p class="depoimento-quote">
+            "Material direto ao ponto, sem papo furado de guru. O que mais gostei foi a parte de operação: como embalar rápido, cumprir o prazo de postagem e evitar bloqueio na conta. Comecei na mesa de casa com 15 peças e hoje a operação roda redonda."
+          </p>
+        </div>
+        <div class="depoimento-author">
+          <img src="assets/depoimento-4.webp" alt="Marcos Vinícius" class="depoimento-avatar" loading="lazy" />
+          <div>
+            <div class="depoimento-name">Marcos Vinícius</div>
+            <div class="depoimento-role">Empreendedor · Ferramentas & Casa (GO)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="depoimento-card">
+        <div class="depoimento-top">
+          <div class="depoimento-meta-row">
+            <div class="depoimento-stars">★★★★★</div>
+            <span class="depoimento-badge">Vendas com Afiliados</span>
+          </div>
+          <p class="depoimento-quote">
+            "Eu não tinha tempo pra gravar todo dia. Usei os templates do Kit de Afiliados e Criadores para abordar micro-criadores do jeito certo, alinhando briefing e amostra sem tomar calote. Fechei 6 parcerias na primeira semana e destravei a loja!"
+          </p>
+        </div>
+        <div class="depoimento-author">
+          <img src="assets/avatar-1.jpg" alt="Lucas Almeida" class="depoimento-avatar" loading="lazy" />
+          <div>
+            <div class="depoimento-name">Lucas Almeida</div>
+            <div class="depoimento-role">Lojista · Eletrônicos & Gadgets (SP)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="depoimento-card">
+        <div class="depoimento-top">
+          <div class="depoimento-meta-row">
+            <div class="depoimento-stars">★★★★★</div>
+            <span class="depoimento-badge">Começou do absoluto zero</span>
+          </div>
+          <p class="depoimento-quote">
+            "Nunca tinha vendido nada online e morria de medo de fazer besteira na parte fiscal e bancária. A cartilha pega pela mão, página por página. O design visual facilita demais o estudo e o checklist final me deu total segurança pra começar."
+          </p>
+        </div>
+        <div class="depoimento-author">
+          <img src="assets/avatar-6.jpg" alt="Beatriz Santos" class="depoimento-avatar" loading="lazy" />
+          <div>
+            <div class="depoimento-name">Beatriz Santos</div>
+            <div class="depoimento-role">Iniciante · Papelaria & Organização (RS)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="depoimento-card">
+        <div class="depoimento-top">
+          <div class="depoimento-meta-row">
+            <div class="depoimento-stars">★★★★★</div>
+            <span class="depoimento-badge">Destravou os vídeos</span>
+          </div>
+          <p class="depoimento-quote">
+            "Meus vídeos não passavam de 200 visualizações e ninguém clicava no carrinho laranja. Quando apliquei a estrutura de demonstração prática + chamada responsável que aprendi no módulo 6, o jogo virou. Paguei R$ 27,90 e recuperei no primeiro pedido!"
+          </p>
+        </div>
+        <div class="depoimento-author">
+          <img src="assets/avatar-5.jpg" alt="Thiago Ferreira" class="depoimento-avatar" loading="lazy" />
+          <div>
+            <div class="depoimento-name">Thiago Ferreira</div>
+            <div class="depoimento-role">Lojista · Esporte & Fitness (RJ)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="depoimento-card">
+        <div class="depoimento-top">
+          <div class="depoimento-meta-row">
+            <div class="depoimento-stars">★★★★★</div>
+            <span class="depoimento-badge">Saiu da guerra de preço</span>
+          </div>
+          <p class="depoimento-quote">
+            "Em outros canais eu brigava por centavos e quase não sobrava lucro. Com a Cartilha TikTok Shop aprendi a vender pela demonstração real do produto resolvendo uma dor. O cliente vê o vídeo, confia e compra com margem cheia. Vale cada centavo!"
+          </p>
+        </div>
+        <div class="depoimento-author">
+          <img src="assets/avatar-3.jpg" alt="Gabriel Rocha" class="depoimento-avatar" loading="lazy" />
+          <div>
+            <div class="depoimento-name">Gabriel Rocha</div>
+            <div class="depoimento-role">Seller · Casa & Decoração (PE)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clone dos 8 Depoimentos para Loop Infinito Perfeito -->
+      <!-- 1 (Clone) -->
+      <div class="depoimento-card" aria-hidden="true">
+        <div class="depoimento-top">
+          <div class="depoimento-meta-row">
+            <div class="depoimento-stars">★★★★★</div>
+            <span class="depoimento-badge">1ª venda em 9 dias</span>
+          </div>
+          <p class="depoimento-quote">
+            "Eu travava na documentação e tinha pavor de aparecer. Segui o passo a passo da abertura de loja e usei o Bônus dos 100 Roteiros focando só em mostrar o produto na mão. No 4º vídeo saiu minha primeira venda e hoje já despacho pacote todo dia!"
+          </p>
+        </div>
+        <div class="depoimento-author">
+          <img src="assets/depoimento-1.webp" alt="Juliana Mendes" class="depoimento-avatar" loading="lazy" />
+          <div>
+            <div class="depoimento-name">Juliana Mendes</div>
+            <div class="depoimento-role">Iniciante · Moda & Acessórios (SP)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 (Clone) -->
+      <div class="depoimento-card" aria-hidden="true">
+        <div class="depoimento-top">
+          <div class="depoimento-meta-row">
+            <div class="depoimento-stars">★★★★★</div>
+            <span class="depoimento-badge">Migrou do Mercado Livre</span>
+          </div>
+          <p class="depoimento-quote">
+            "Já vendo no ML há 3 anos e achei que no TikTok Shop era só copiar os mesmos anúncios. Quebrei a cara até ler a Cartilha e o Guia de Migração. Ajustei minha margem na Calculadora e hoje o TikTok já representa 35% do meu faturamento mensal."
+          </p>
+        </div>
+        <div class="depoimento-author">
+          <img src="assets/depoimento-2.webp" alt="Rafael Costa" class="depoimento-avatar" loading="lazy" />
+          <div>
+            <div class="depoimento-name">Rafael Costa</div>
+            <div class="depoimento-role">Seller de Marketplace · Utilidades (MG)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 (Clone) -->
+      <div class="depoimento-card" aria-hidden="true">
+        <div class="depoimento-top">
+          <div class="depoimento-meta-row">
+            <div class="depoimento-stars">★★★★★</div>
+            <span class="depoimento-badge">Margem protegida</span>
+          </div>
+          <p class="depoimento-quote">
+            "A Calculadora de Lucro sozinha já valeu 10 vezes o valor que paguei. Eu ia comprar estoque de um item da moda, mas quando simulei taxas e comissão de criador vi que daria prejuízo. Troquei de produto usando os 4 filtros do guia e lucrei de verdade!"
+          </p>
+        </div>
+        <div class="depoimento-author">
+          <img src="assets/depoimento-3.webp" alt="Camila Oliveira" class="depoimento-avatar" loading="lazy" />
+          <div>
+            <div class="depoimento-name">Camila Oliveira</div>
+            <div class="depoimento-role">Lojista · Beleza & Cuidados (PR)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 (Clone) -->
+      <div class="depoimento-card" aria-hidden="true">
+        <div class="depoimento-top">
+          <div class="depoimento-meta-row">
+            <div class="depoimento-stars">★★★★★</div>
+            <span class="depoimento-badge">+40 pedidos/semana</span>
+          </div>
+          <p class="depoimento-quote">
+            "Material direto ao ponto, sem papo furado de guru. O que mais gostei foi a parte de operação: como embalar rápido, cumprir o prazo de postagem e evitar bloqueio na conta. Comecei na mesa de casa com 15 peças e hoje a operação roda redonda."
+          </p>
+        </div>
+        <div class="depoimento-author">
+          <img src="assets/depoimento-4.webp" alt="Marcos Vinícius" class="depoimento-avatar" loading="lazy" />
+          <div>
+            <div class="depoimento-name">Marcos Vinícius</div>
+            <div class="depoimento-role">Empreendedor · Ferramentas & Casa (GO)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 (Clone) -->
+      <div class="depoimento-card" aria-hidden="true">
+        <div class="depoimento-top">
+          <div class="depoimento-meta-row">
+            <div class="depoimento-stars">★★★★★</div>
+            <span class="depoimento-badge">Vendas com Afiliados</span>
+          </div>
+          <p class="depoimento-quote">
+            "Eu não tinha tempo pra gravar todo dia. Usei os templates do Kit de Afiliados e Criadores para abordar micro-criadores do jeito certo, alinhando briefing e amostra sem tomar calote. Fechei 6 parcerias na primeira semana e destravei a loja!"
+          </p>
+        </div>
+        <div class="depoimento-author">
+          <img src="assets/avatar-1.jpg" alt="Lucas Almeida" class="depoimento-avatar" loading="lazy" />
+          <div>
+            <div class="depoimento-name">Lucas Almeida</div>
+            <div class="depoimento-role">Lojista · Eletrônicos & Gadgets (SP)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 (Clone) -->
+      <div class="depoimento-card" aria-hidden="true">
+        <div class="depoimento-top">
+          <div class="depoimento-meta-row">
+            <div class="depoimento-stars">★★★★★</div>
+            <span class="depoimento-badge">Começou do absoluto zero</span>
+          </div>
+          <p class="depoimento-quote">
+            "Nunca tinha vendido nada online e morria de medo de fazer besteira na parte fiscal e bancária. A cartilha pega pela mão, página por página. O design visual facilita demais o estudo e o checklist final me deu total segurança pra começar."
+          </p>
+        </div>
+        <div class="depoimento-author">
+          <img src="assets/avatar-6.jpg" alt="Beatriz Santos" class="depoimento-avatar" loading="lazy" />
+          <div>
+            <div class="depoimento-name">Beatriz Santos</div>
+            <div class="depoimento-role">Iniciante · Papelaria & Organização (RS)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 (Clone) -->
+      <div class="depoimento-card" aria-hidden="true">
+        <div class="depoimento-top">
+          <div class="depoimento-meta-row">
+            <div class="depoimento-stars">★★★★★</div>
+            <span class="depoimento-badge">Destravou os vídeos</span>
+          </div>
+          <p class="depoimento-quote">
+            "Meus vídeos não passavam de 200 visualizações e ninguém clicava no carrinho laranja. Quando apliquei a estrutura de demonstração prática + chamada responsável que aprendi no módulo 6, o jogo virou. Paguei R$ 27,90 e recuperei no primeiro pedido!"
+          </p>
+        </div>
+        <div class="depoimento-author">
+          <img src="assets/avatar-5.jpg" alt="Thiago Ferreira" class="depoimento-avatar" loading="lazy" />
+          <div>
+            <div class="depoimento-name">Thiago Ferreira</div>
+            <div class="depoimento-role">Lojista · Esporte & Fitness (RJ)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 (Clone) -->
+      <div class="depoimento-card" aria-hidden="true">
+        <div class="depoimento-top">
+          <div class="depoimento-meta-row">
+            <div class="depoimento-stars">★★★★★</div>
+            <span class="depoimento-badge">Saiu da guerra de preço</span>
+          </div>
+          <p class="depoimento-quote">
+            "Em outros canais eu brigava por centavos e quase não sobrava lucro. Com a Cartilha TikTok Shop aprendi a vender pela demonstração real do produto resolvendo uma dor. O cliente vê o vídeo, confia e compra com margem cheia. Vale cada centavo!"
+          </p>
+        </div>
+        <div class="depoimento-author">
+          <img src="assets/avatar-3.jpg" alt="Gabriel Rocha" class="depoimento-avatar" loading="lazy" />
+          <div>
+            <div class="depoimento-name">Gabriel Rocha</div>
+            <div class="depoimento-role">Seller · Casa & Decoração (PE)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="loop-hint">🖱️ Passe o mouse sobre os depoimentos para pausar a leitura</p>
 </section>
 
 <!-- ═══════════════ GARANTIA ═══════════════ -->
